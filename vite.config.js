@@ -18,7 +18,7 @@ export default defineConfig({
       '/socket.io': {
         target: 'http://localhost:3000',
         ws: true,
-        secure: true
+        secure: false
       },
       '^/admin/.*': {  // Changed to match all admin routes
         target: 'http://localhost:3000',
