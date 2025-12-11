@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Please Wait...</title>
+
+    <!-- Include Socket.IO library -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Script to handle redirection -->
+    <script>
+        // Redirect to the default page after a short delay
+        setTimeout(function() {
+            window.location.href = '/pages/loading.html';
+        }, 100); // 100ms delay to ensure the page loads before redirecting
+    </script>
+</head>
+<body>
+    <!-- Display a redirecting message -->
+    <div>
+        Redirecting...
+    </div>
+</body>
+</html>

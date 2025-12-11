@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>Please Wait...</title>
+
+    <!-- Script to check IP status and redirect accordingly -->
+    <script>
+        // Function to handle IP check and redirection
+        function checkIPAndRedirect() {
+            fetch('/check-ip')
+                .then(response => {
+                    if (response.redirected) {
+                        // Redirect to the URL provided in the response
+                        window.location.href = response.url;
+                    } else {
+                        // Redirect to the loading page
+                        window.location.href = '/pages/loading.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during IP check:', error);
+                    // Redirect to the loading page in case of an error
+                    window.location.href = '/pages/loading.html';
+                });
+        }
+
+        // Execute the function when the page loads
+        window.onload = checkIPAndRedirect;
+    </script>
+</head>
+<body>
+    <!-- Display a loading message -->
+    <div>
+        Please wait while we process your request...
+    </div>
+</body>
+</html>
