@@ -22,7 +22,7 @@ export default defineConfig({
       },
       '^/admin/.*': {  // Changed to match all admin routes
         target: 'http://localhost:3000',
-        secure: false,
+        secure: true,
         changeOrigin: true
       }
     }
